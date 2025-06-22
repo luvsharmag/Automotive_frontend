@@ -25,7 +25,8 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useSearchParams } from "react-router-dom";
-const API_URL = "http://localhost:3000/api/inquiry";
+// const API_URL = "http://localhost:3000/api/inquiry";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/inquiry`;
 const Inquiry = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
    const [searchParams] = useSearchParams();
