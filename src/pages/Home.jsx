@@ -39,7 +39,7 @@ import PremiumBrands from "@/components/layout/PremiumBrands";
 import ExploreVehicles from "@/components/layout/Explore";
 import PopularMakers from "@/components/layout/PopularMakers";
 import { CheckCircle2, MoveUpRight } from "lucide-react";
-import carSellImg from "@/assets/background.jpg";
+import carSellImg from "@/assets/Background.jpg";
 import { Separator } from "@/components/ui/separator";
 import f1 from "@/assets/section/f1.svg.png";
 import f2 from "@/assets/section/f2.svg.png";
