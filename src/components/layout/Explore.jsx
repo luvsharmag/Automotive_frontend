@@ -15,7 +15,7 @@ import { Separator } from "@/components/ui/separator";
 
 import { useNavigate } from "react-router-dom";
 import { getVehicles } from "@/services/vehicleService";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 const ExploreVehicles = () => {
   const [activeTab, setActiveTab] = useState("stock");
   const [isDragging, setIsDragging] = useState(false);
@@ -109,6 +109,7 @@ const ExploreVehicles = () => {
   }, []);
   return (
     <section className="bg-[#FFF] py-10 md:px-10">
+          <Toaster position="top-center" />
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex justify-between items-start mb-4">
           <h2 className="text-2xl font-semibold text-gray-800">

@@ -23,13 +23,13 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useSearchParams } from "react-router-dom";
 // const API_URL = "http://localhost:3000/api/inquiry";
 const API_URL = `${import.meta.env.VITE_API_URL}/api/inquiry`;
 const Inquiry = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-   const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const vehicleTitle = searchParams.get("title");
   const vehicles = [
@@ -37,7 +37,7 @@ const Inquiry = () => {
     { id: "2", name: "2022 Ford Mustang GT" },
     { id: "3", name: "2021 Honda Civic Touring" },
   ];
-  console.log('object',vehicleTitle)
+  console.log("object", vehicleTitle);
   const form = useForm({
     defaultValues: {
       name: "",
@@ -48,7 +48,7 @@ const Inquiry = () => {
       contactMethod: "email",
     },
   });
-const onSubmit = async (data) => {
+  const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
       const response = await axios.post(API_URL, data);
@@ -70,6 +70,7 @@ const onSubmit = async (data) => {
 
   return (
     <Layout>
+      <Toaster position="top-center" />
       <div className="container py-12">
         <div className="max-w-4xl mx-auto">
           <Card>
@@ -84,7 +85,6 @@ const onSubmit = async (data) => {
 
             <CardContent>
               <div className="grid md:grid-cols-2 gap-8">
-                
                 <div>
                   <Form {...form}>
                     <form
