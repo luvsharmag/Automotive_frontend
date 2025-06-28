@@ -183,7 +183,6 @@ const Vehicles = () => {
     } else if (filterType === "sort") {
       newFilters.sort = value;
     } else {
-
       if (newFilters[filterType].includes(value)) {
         newFilters[filterType] = newFilters[filterType].filter(
           (item) => item !== value
@@ -194,7 +193,7 @@ const Vehicles = () => {
     }
 
     setFilters(newFilters);
-    setPage(1); 
+    setPage(1);
     fetchVehicles(1, newFilters);
   };
   const resetFilters = () => {
@@ -221,7 +220,12 @@ const Vehicles = () => {
       setPage(newPage);
     }
   };
-
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
   const getPageNumbers = () => {
     const pages = [];
     // const maxVisiblePages = 5;
@@ -488,7 +492,8 @@ const Vehicles = () => {
                               <Gauge className="w-4 h-4" /> {car.mileage}
                             </div>
                             <div className="flex items-center gap-1">
-                              <Fuel className="w-4 h-4" /> {car.specifications.fuelType}
+                              <Fuel className="w-4 h-4" />{" "}
+                              {car.specifications.fuelType}
                             </div>
                             <div className="flex items-center gap-1">
                               <Settings className="w-4 h-4" />{" "}

@@ -81,129 +81,130 @@ const Home = () => {
 
         <Header className="relative z-10" />
 
-        <section className="relative z-10 h-[90vh] flex items-center justify-center text-center px-4">
-          <div className="w-full max-w-4xl space-y-6 text-white">
-            <p className="text-md tracking-wide text-white/80">
-              Find cars for sale and for rent near you
-            </p>
+           <section className="relative z-10 h-[90vh] flex items-center justify-center text-center px-4">
+      <div className="w-full max-w-4xl space-y-6 text-white">
+        <p className="text-md tracking-wide text-white/80">
+          Find cars for sale and for rent near you
+        </p>
 
-            <h1 className="text-4xl sm:text-5xl font-bold drop-shadow-lg">
-              Find Your Perfect Car
-            </h1>
+        <h1 className="text-4xl sm:text-5xl font-bold drop-shadow-lg">
+          Find Your Perfect Car
+        </h1>
 
-            <Tabs defaultValue="all" className="w-full">
-              <TabsList className="mx-auto bg-white/20 backdrop-blur-md p-1 rounded-full gap-2">
-                <TabsTrigger
-                  value="all"
-                  className="text-white data-[state=active]:bg-white data-[state=active]:text-black px-4 py-1 rounded-full transition"
-                >
-                  All
-                </TabsTrigger>
-                <TabsTrigger
-                  value="new"
-                  className="text-white data-[state=active]:bg-white data-[state=active]:text-black px-4 py-1 rounded-full transition"
-                >
-                  New
-                </TabsTrigger>
-                <TabsTrigger
-                  value="used"
-                  className="text-white data-[state=active]:bg-white data-[state=active]:text-black px-4 py-1 rounded-full transition"
-                >
-                  Used
-                </TabsTrigger>
-              </TabsList>
-            </Tabs>
-            <div className="flex justify-center mt-6">
-              <div className="relative flex bg-white rounded-full shadow-md w-full max-w-sm  md:max-w-2xl overflow-hidden">
-                {/* Select Inputs */}
-                <div className="flex flex-1 items-center pl-5 pr-1 py-2 gap-1">
-                  <Select>
-                    <SelectTrigger className="min-w-[60px] md:min-w-[120px] border-none bg-transparent shadow-none focus:ring-0 px-3">
-                      <SelectValue placeholder="Any Make" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="toyota">Toyota</SelectItem>
-                      <SelectItem value="honda">Honda</SelectItem>
-                      <SelectItem value="ford">Ford</SelectItem>
-                    </SelectContent>
-                  </Select>
+        <Tabs defaultValue="all" className="w-full">
+          <TabsList className="mx-auto bg-white/20 backdrop-blur-md p-1 rounded-full gap-2">
+            <TabsTrigger
+              value="all"
+              className="text-white data-[state=active]:bg-white data-[state=active]:text-black px-4 py-1 rounded-full transition"
+            >
+              All
+            </TabsTrigger>
+            <TabsTrigger
+              value="new"
+              className="text-white data-[state=active]:bg-white data-[state=active]:text-black px-4 py-1 rounded-full transition"
+            >
+              New
+            </TabsTrigger>
+            <TabsTrigger
+              value="used"
+              className="text-white data-[state=active]:bg-white data-[state=active]:text-black px-4 py-1 rounded-full transition"
+            >
+              Used
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
+        
+        <div className="flex justify-center mt-6">
+          <div className="relative flex bg-white rounded-full shadow-md w-full max-w-sm md:max-w-2xl overflow-hidden">
+            {/* Select Inputs */}
+            <div className="flex flex-1 items-center pl-5 pr-1 py-2 gap-1">
+              <Select>
+                <SelectTrigger className="min-w-[60px] md:min-w-[120px] border-none bg-transparent shadow-none focus:ring-0 px-3">
+                  <SelectValue placeholder="Any Make" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="toyota">Toyota</SelectItem>
+                  <SelectItem value="honda">Honda</SelectItem>
+                  <SelectItem value="ford">Ford</SelectItem>
+                </SelectContent>
+              </Select>
 
-                  <Select>
-                    <SelectTrigger className="min-w-[60px] md:min-w-[120px] border-none bg-transparent shadow-none focus:ring-0 px-3">
-                      <SelectValue placeholder="Any Model" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="corolla">Corolla</SelectItem>
-                      <SelectItem value="civic">Civic</SelectItem>
-                      <SelectItem value="mustang">Mustang</SelectItem>
-                    </SelectContent>
-                  </Select>
+              <Select>
+                <SelectTrigger className="min-w-[60px] md:min-w-[120px] border-none bg-transparent shadow-none focus:ring-0 px-3">
+                  <SelectValue placeholder="Any Model" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="corolla">Corolla</SelectItem>
+                  <SelectItem value="civic">Civic</SelectItem>
+                  <SelectItem value="mustang">Mustang</SelectItem>
+                </SelectContent>
+              </Select>
 
-                  <Select>
-                    <SelectTrigger className="min-w-[60px] md:min-w-[120px] border-none bg-transparent shadow-none focus:ring-0 px-3">
-                      <SelectValue placeholder="Prices" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="low">Below ₹10L</SelectItem>
-                      <SelectItem value="mid">₹10L – ₹25L</SelectItem>
-                      <SelectItem value="high">Above ₹25L</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="md:pr-1.5 md:py-1.5 mr-1 flex items-center justify-center">
-                  <Button
-                    className="rounded-full h-10 w-10 md:h-auto md:w-auto md:px-5 text-white"
-                    style={{ backgroundColor: "#405FF2" }}
-                  >
-                    <Search className="w-4 h-4" />
-                    <span className="hidden md:inline ml-1">Search Car</span>
-                  </Button>
-                </div>
-              </div>
+              <Select>
+                <SelectTrigger className="min-w-[60px] md:min-w-[120px] border-none bg-transparent shadow-none focus:ring-0 px-3">
+                  <SelectValue placeholder="Prices" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="low">Below ₹10L</SelectItem>
+                  <SelectItem value="mid">₹10L – ₹25L</SelectItem>
+                  <SelectItem value="high">Above ₹25L</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
-            <p className="mt-6 text-white/80">Or browse featured model</p>
-
-            <div className="flex flex-wrap justify-center gap-3 mt-2">
+            <div className="md:pr-1.5 md:py-1.5 mr-1 flex items-center justify-center">
               <Button
-                variant="outline"
-                className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
+                className="rounded-full h-10 w-10 md:h-auto md:w-auto md:px-5 text-white"
+                style={{ backgroundColor: "#405FF2" }}
               >
-                <Car className="w-4 h-4" />
-                SUV
-              </Button>
-              <Button
-                variant="outline"
-                className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
-              >
-                <CarFront className="w-4 h-4" />
-                Sedan
-              </Button>
-              <Button
-                variant="outline"
-                className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
-              >
-                <Truck className="w-4 h-4" />
-                Truck
-              </Button>
-              <Button
-                variant="outline"
-                className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
-              >
-                <Car className="w-4 h-4" />
-                Coupe
-              </Button>
-              <Button
-                variant="outline"
-                className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
-              >
-                <CarFront className="w-4 h-4" />
-                Hatchback
+                <Search className="w-4 h-4" />
+                <span className="hidden md:inline ml-1">Search Car</span>
               </Button>
             </div>
           </div>
-        </section>
+        </div>
+
+        <p className="mt-6 text-white/80">Or browse featured model</p>
+
+        <div className="flex flex-wrap justify-center gap-3 mt-2">
+          <Button
+            variant="outline"
+            className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
+          >
+            <Car className="w-4 h-4" />
+            SUV
+          </Button>
+          <Button
+            variant="outline"
+            className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
+          >
+            <CarFront className="w-4 h-4" />
+            Sedan
+          </Button>
+          <Button
+            variant="outline"
+            className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
+          >
+            <Truck className="w-4 h-4" />
+            Truck
+          </Button>
+          <Button
+            variant="outline"
+            className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
+          >
+            <Car className="w-4 h-4" />
+            Coupe
+          </Button>
+          <Button
+            variant="outline"
+            className="backdrop-blur-md bg-white/10 border-white/20 text-white rounded-full px-4 py-2 flex items-center gap-2"
+          >
+            <CarFront className="w-4 h-4" />
+            Hatchback
+          </Button>
+        </div>
+      </div>
+    </section>
       </div>
 
       <PremiumBrands />
@@ -388,46 +389,64 @@ const Home = () => {
         </div>
       </section> */}
 
-      <section className="bg-[#FFF] py-10 my-16 px-4 md:px-10">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex justify-between items-start mb-4">
-            <h2 className="text-4xl font-semibold text-gray-800 mb-12">
-              Shop BoxCar Your Way
-            </h2>
-            <button className="text-sm text-primary flex items-center gap-1 hover:underline">
-              View All <MoveUpRight className="w-4 h-4" />
-            </button>
-          </div>
-          <div className="w-full border-b border-gray-300 mb-6 flex gap-6 text-sm font-medium">
-            {[
-              { label: "New Cars For Sale", value: "new" },
-              { label: "Used Cars For Sale", value: "used" },
-              { label: "Browse By Type", value: "type" },
-              { label: "Browse By Brand", value: "brand" },
-            ].map((tab) => (
-              <button
-                key={tab.value}
-                onClick={() => setActiveTab(tab.value)}
-                className={`pb-2 relative transition-colors duration-200 text-gray-700 hover:text-primary ${
-                  activeTab === tab.value
-                    ? "text-primary border-b-2 border-primary"
-                    : ""
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      <section className="bg-white py-10 my-16 px-4 md:px-10">
+  <div className="container mx-auto px-4 max-w-5xl">
+    <div className="flex flex-col md:flex-row justify-between items-start mb-4 gap-4">
+      <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+        Shop BoxCar Your Way
+      </h2>
+      <button className="text-sm text-primary flex items-center gap-1 hover:underline self-start md:self-auto">
+        View All <MoveUpRight className="w-4 h-4" />
+      </button>
+    </div>
 
-          <div className="grid grid-rows-6 grid-cols-5 gap-0">
-            {getBrandsByTab(activeTab).map((brand, index) => (
-              <div key={index} className="p-3 text-start rounded-md">
-                {brand}
-              </div>
-            ))}
+    {/* Tabs - Horizontal scroll on mobile */}
+    <div className="w-full border-b border-gray-300 mb-6 overflow-x-auto">
+      <div className="flex gap-6 text-sm font-medium min-w-max pb-2">
+        {[
+          { label: "New Cars For Sale", value: "new" },
+          { label: "Used Cars For Sale", value: "used" },
+          { label: "Browse By Type", value: "type" },
+          { label: "Browse By Brand", value: "brand" },
+        ].map((tab) => (
+          <button
+            key={tab.value}
+            onClick={() => setActiveTab(tab.value)}
+            className={`whitespace-nowrap pb-2 relative transition-colors duration-200 text-gray-700 hover:text-primary ${
+              activeTab === tab.value
+                ? "text-primary border-b-2 border-primary"
+                : ""
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {/* Responsive Grid */}
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      {getBrandsByTab(activeTab).map((brand, index) => (
+        <div 
+          key={index} 
+          className="p-3 text-start rounded-md hover:bg-gray-50 transition-colors border border-gray-100"
+        >
+          <div className="flex flex-col items-center text-center">
+            {/* Brand logo would go here */}
+            <div className="w-12 h-12 bg-gray-200 rounded-full mb-2 flex items-center justify-center">
+              <Car className="w-6 h-6 text-gray-500" />
+            </div>
+            <span className="text-sm font-medium text-gray-800">{brand}</span>
+            <span className="text-xs text-gray-500 mt-1">
+              {/* Optional: Number of models */}
+              {Math.floor(Math.random() * 50) + 10} models
+            </span>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
       <TestimonialCarousel />
       <BlogPost />
       <DualCardSection />

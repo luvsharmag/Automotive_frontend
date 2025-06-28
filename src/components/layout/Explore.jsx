@@ -171,6 +171,7 @@ const ExploreVehicles = () => {
                   <img
                     src={car.images?.[0]}
                     alt={car.title}
+                    loading="lazy"
                     className="w-full h-40 object-cover rounded-t-md"
                   />
                   <span className="absolute top-2 left-2 bg-primary text-white text-xs px-3 py-1 rounded-full">

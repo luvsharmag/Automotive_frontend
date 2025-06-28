@@ -49,6 +49,12 @@ const VehicleDetail = () => {
   useEffect(() => {
     fetchVehicle(id);
   }, [id]);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   // const vehicle = {
   //   title: "2023 Tesla Model 3 Long Range",
@@ -99,17 +105,19 @@ const VehicleDetail = () => {
               <div className="rounded-lg overflow-hidden bg-gray-100">
                 <Carousel className="w-full">
                   <CarouselContent>
-                    {vehicle?.images && vehicle.images.length > 0 && vehicle.images.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="aspect-video">
-                          <img
-                            src={`${image}?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80`}
-                            alt={`${vehicle.title} - ${index + 1}`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
+                    {vehicle?.images &&
+                      vehicle.images.length > 0 &&
+                      vehicle.images.map((image, index) => (
+                        <CarouselItem key={index}>
+                          <div className="aspect-video">
+                            <img
+                              src={`${image}?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80`}
+                              alt={`${vehicle.title} - ${index + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
                   </CarouselContent>
                   <CarouselPrevious className="left-4" />
                   <CarouselNext className="right-4" />
@@ -124,14 +132,15 @@ const VehicleDetail = () => {
                   <p className="text-gray-700 mb-4">{vehicle.overview}</p>
 
                   <div className="grid grid-cols-2 gap-4 mt-6">
-                    {vehicle?.features?.length && vehicle?.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <Badge variant="outline" className="px-2 py-1">
-                          <Check className="w-4 h-4 mr-1" />
-                          {feature}
-                        </Badge>
-                      </div>
-                    ))}
+                    {vehicle?.features?.length &&
+                      vehicle?.features.map((feature, index) => (
+                        <div key={index} className="flex items-center gap-2">
+                          <Badge variant="outline" className="px-2 py-1">
+                            <Check className="w-4 h-4 mr-1" />
+                            {feature}
+                          </Badge>
+                        </div>
+                      ))}
                   </div>
                 </CardContent>
               </Card>
@@ -142,19 +151,20 @@ const VehicleDetail = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {vehicle?.specifications && Object.entries(vehicle?.specifications).map(
-                      ([key, value]) => (
-                        <div
-                          key={key}
-                          className="flex justify-between py-2 border-b"
-                        >
-                          <span className="font-medium text-gray-600 capitalize">
-                            {key.replace(/([A-Z])/g, " $1")}
-                          </span>
-                          <span className="text-gray-800">{value}</span>
-                        </div>
-                      )
-                    )}
+                    {vehicle?.specifications &&
+                      Object.entries(vehicle?.specifications).map(
+                        ([key, value]) => (
+                          <div
+                            key={key}
+                            className="flex justify-between py-2 border-b"
+                          >
+                            <span className="font-medium text-gray-600 capitalize">
+                              {key.replace(/([A-Z])/g, " $1")}
+                            </span>
+                            <span className="text-gray-800">{value}</span>
+                          </div>
+                        )
+                      )}
                   </div>
                 </CardContent>
               </Card>
@@ -201,7 +211,9 @@ const VehicleDetail = () => {
                     <Button
                       className="w-full"
                       size="lg"
-                      onClick={() => Navigate(`/inquiry?title=${vehicle.title}`)}
+                      onClick={() =>
+                        Navigate(`/inquiry?title=${vehicle.title}`)
+                      }
                     >
                       <Phone className="h-4 w-4 mr-2" />
                       Contact Seller
